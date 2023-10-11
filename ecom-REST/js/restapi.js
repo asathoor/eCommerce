@@ -1,24 +1,32 @@
+// If the're a connection with the JavaScript file you'll see the message below
 console.log("Ok, from ./js/restapi.js")
 
-// the REST API Endpoint (URL) with key and secret
+// the REST API Endpoint (URL):
 const endPoint = "https://woo.thoth.dk/wp-json/wc/v3/products"
-const ck = "consumer_key=" + "ck_1b7c550d193eceaece991fdff96c8c1280cc43c0"
-const cs = "consumer_secret=" + "cs_a642dfe44f6455a67f167443604beb8e480f6a57"
-// add key and secret to the endpoint
-const wooRest = endPoint + "?" + ck + "&" + cs
-// if it be your will add more queries separated by + "&" + key=value
 
-// fetch() the data from the const woorest
+// consumer key:
+const ck =  "consumer_key=" 
+            + "ck_1b7c550d193eceaece991fdff96c8c1280cc43c0"
+
+// consumer secret:
+const cs =  "consumer_secret=" 
+            + "cs_a642dfe44f6455a67f167443604beb8e480f6a57"
+
+// combine key and secret with the endpoint:
+const wooRest = endPoint + "?" + ck + "&" + cs
+// add more key value pairs if you need it
+
+// now fetch() the data from the const woorest
 fetch( wooRest ).then(
 
     response => {
 
-    return response.json(); // get data as JSON
+    return response.json(); // let data be JSON
     
     }).then(data => {
 
         // what's inside the JSON?
-        console.log( data ); // check the console!
+        console.log( data ); // check this in the console!
 
         // Sample data (uncomment and watch this in the Inspect Tool / Console):
         // ....
@@ -29,7 +37,7 @@ fetch( wooRest ).then(
         // loop through the data object
         for (i=0; i < data.length; i++ ){
 
-            // add the procucts to <div id="katalog"></div>
+            // this will add the procucts as HTML to <div id="katalog"></div>
             katalog.innerHTML += `
                 <section class="produkter">
                     <h3> ${data[i].name} </h3>
