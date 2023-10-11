@@ -2,8 +2,8 @@ console.log("Ok, from ./js/restapi.js")
 
 // the REST API Endpoint (URL) with key and secret
 const endPoint = "https://woo.thoth.dk/wp-json/wc/v3/products"
-const ck = "consumer_key=ck_1b7c550d193eceaece991fdff96c8c1280cc43c0"
-const cs = "consumer_secret=cs_a642dfe44f6455a67f167443604beb8e480f6a57"
+const ck = "consumer_key=" + "ck_1b7c550d193eceaece991fdff96c8c1280cc43c0"
+const cs = "consumer_secret=" + "cs_a642dfe44f6455a67f167443604beb8e480f6a57"
 // add key and secret to the endpoint
 const wooRest = endPoint + "?" + ck + "&" + cs
 // if it be your will add more queries separated by + "&" + key=value
